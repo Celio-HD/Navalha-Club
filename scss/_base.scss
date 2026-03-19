@@ -1,0 +1,229 @@
+@use 'variaveis' as *;
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    background-color: variables$cinza; 
+    color: $branco;
+    font-family: $font;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+// Imagens responsivas
+img {
+    max-width: 100%;
+    display: block;
+}
+
+// Reset de links
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+// Reset de listas
+ul, ol {
+    list-style: none;
+}
+
+// Reset de botões
+button {
+    background: none;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: none;
+}
+
+// barra de navegacao
+.navbar {
+    .nav-link {
+        position: relative;
+        transition: 0.3s;
+
+        &:hover {
+        color: $dourado;
+        }
+
+        &::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        background: $dourado;
+        bottom: 0;
+        left: 0;
+        transition: 0.3s;
+        }
+
+        &:hover::after {
+        width: 100%;
+        }
+    }
+
+    .navbar-brand img {
+        width: 60px;
+    }
+}
+
+// inicio
+.hero {
+    background: url('/img/banner.png') no-repeat center/cover;
+    color: white;
+    position: relative;
+
+    .container {
+        z-index: 2;
+    }
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+}
+.hero h1 {
+    margin: 1rem 0rem;
+    font-size: 2rem;
+    font-weight: bold;
+}
+.hero p {
+    margin: 20px 0;
+}
+.hero .btn {
+    background: $dourado;
+    border: none;
+    color: black;
+    margin: 20px 0;
+}
+
+// sobre
+.sobre {
+    background-color: $cinza;
+    color: white;
+
+    h2 {
+        color: $dourado;
+        margin-bottom: 20px;
+    }
+    img {
+        border: 2px solid $dourado;
+    }
+}
+.sobre img {
+  transition: 0.3s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+// sevicos
+.servicos {
+    background-color: $cinza;
+    color: white;
+
+    h2 {
+        color: $dourado;
+    }
+
+    p {
+        color: #ccc;
+    }
+
+    .card {
+        background: #000;
+        border: 1px solid $dourado;
+        margin-top: 20px;
+        transition: 0.3s;
+
+        &:hover {
+        transform: translateY(-10px);
+        }
+
+        h5 {
+        color: $dourado;
+        }
+    }
+}
+.preco {
+  font-weight: bold;
+}
+
+// depoimento
+.depoimentos {
+    background: #000;
+    color: white;
+
+    h2 {
+        color: $dourado;
+        margin-bottom: 30px;
+    }
+
+    .carousel-item {
+        padding: 40px;
+
+        p {
+        font-size: 1.2rem;
+        font-style: italic;
+        }
+
+        h6 {
+        margin-top: 15px;
+        color: $dourado;
+        }
+    }
+}
+.estrelas {
+  color: $dourado;
+  margin-bottom: 10px;
+}
+
+// contato
+.contato {
+    background: $cinza;
+    color: white;
+
+    h2 {
+        color: $dourado;
+        margin-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 30px;
+    }
+
+    .form-control {
+        background: #000;
+        border: 1px solid $dourado;
+        color: white;
+
+        &:focus {
+        border-color: lighten($dourado, 10%);
+        box-shadow: none;
+        }
+    }
+
+    .btn {
+        background: $dourado;
+        border: none;
+        color: black;
+
+        &:hover {
+        background: lighten($dourado, 10%);
+        color: $branco;
+        }
+    }
+}
